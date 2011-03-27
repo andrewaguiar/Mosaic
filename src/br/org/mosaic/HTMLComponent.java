@@ -2,9 +2,7 @@ package br.org.mosaic;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -161,7 +159,7 @@ public abstract class HTMLComponent implements HTMLElement
 		return this;
 	}
 
-	public HTMLComponent addTitle(final String s) {
+	public HTMLComponent title(final String s) {
 		this.addProperty(new Property("title", s));
 		return this;
 	}
@@ -248,20 +246,6 @@ public abstract class HTMLComponent implements HTMLElement
 
 	public void setIndented(final boolean indented) {
 		this.indented = indented;
-	}
-
-	public Collection<? extends HTMLComponent> getElementsByTagName(final String tag) {
-		final Collection<HTMLComponent> tags = new LinkedList<HTMLComponent>();
-		if (tag.toUpperCase().equals(this.tagName().toUpperCase())) {
-			tags.add(this);
-		}
-		for (final HTMLElement e : this.elements) {
-			if (e instanceof HTMLComponent) {
-				final HTMLComponent htmlComponent = (HTMLComponent) e;
-				tags.addAll(htmlComponent.getElementsByTagName(tag));
-			}
-		}
-		return tags;
 	}
 	
 	public HTMLComponent setQuotation(Quotation quotation) {

@@ -18,7 +18,7 @@ public class Head extends HTMLComponent {
 		return this;
 	}
 
-	public Head addTitle(String title) {
+	public Head title(String title) {
 		add(new Title(title));
 		return this;
 	}

@@ -3,6 +3,7 @@ import br.org.mosaic.HTMLComponentCollection;
 import br.org.mosaic.HTMLElement;
 import br.org.mosaic.properties.StyleName;
 import br.org.mosaic.properties.StyleProperty;
+import br.org.mosaic.tags.CodeElement;
 import br.org.mosaic.tags.TextElement;
 import br.org.mosaic.tags.list.LI;
 import br.org.mosaic.tags.list.UL;
@@ -185,5 +186,18 @@ public class TestingHTMLElements extends TestCase
 		HTMLComponentCollection collection = HTMLComponentCollection.create(new TextElement("nested"));
 
 		assertEquals("nested", collection.toString());
+	}
+	
+	public void testCodeElement(){
+		CodeElement c = new CodeElement(
+		"var a = '1';",
+		"var b = '2';",
+		"if( a == b ){",
+		"   alert('a is NOT equals b');",
+		"}else{   ",
+		    "return;",
+		"}"
+		);
+		assertEquals("var a = '1';var b = '2';if( a == b ){alert('a is NOT equals b');}else{return;}", c.toString());
 	}
 }
