@@ -1,0 +1,25 @@
+Mosaic provides a more DSL style to create HTML code from Java:
+
+Example:
+
+		new Table().id("table").addStyles( StyleProperty.BACKGROUND + ":#FEFEFE" ).classes("report_table").add(
+				new THead().add(
+						new TR().add(
+								new TD().text("name"),
+								new TD().text("age"),
+								new TD().text("city")
+						)
+				),
+				new TBody().add(
+						new TR().add(
+								new TD().text("Andrew"),
+								new TD().text("24"),
+								new TD().text("São Paulo")
+						),
+						new TR().add(
+								new TD().text("Test"),
+								new TD().text("2000"),
+								new TD().text("All the world")
+						)
+				)
+		);
