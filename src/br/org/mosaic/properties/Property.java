@@ -32,7 +32,6 @@ public class Property {
 		StringBuilder s = new StringBuilder();
 		for (Property p : ps) {
 			p.setQuotation(quotation);
-
 			s.append(' ');
 			s.append(p);
 		}
