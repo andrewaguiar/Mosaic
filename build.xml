@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mosaic" default="DIST" basedir=".">
+
+	<property name="mill.folder.project" value="../Mill/"/>
+	<property name="mill.folder.lib" value="${mill.folder.project}lib/"/>
+	<property name="mill.folder.dist" value="${mill.folder.project}dist/"/>
+
+	<property name="mosaic.folder.project" value="../Mosaic/"/>
+
+	<property name="mosaic.version" value="1.0.0.0"/>
+
+	<property name="mosaic.folder.src" value="${mosaic.folder.project}src/"/>
+	<property name="mosaic.folder.build" value="${mosaic.folder.project}build/"/>
+	<property name="mosaic.folder.dist" value="${mosaic.folder.project}dist/"/>
+	<property name="mosaic.folder.lib" value="${mosaic.folder.project}lib/"/>
+	<property name="project.mill.buildxml" value="../Mill/build.xml"/>
+
+	<target name="CLEAN">
+		<delete verbose="false" dir="${mosaic.folder.build}"/>
+	</target>
+
+	<target name="CLEAN_ALL">
+		<delete verbose="false" dir="${mosaic.folder.build}"/>
+		<delete verbose="false" dir="${mosaic.folder.dist}"/>
+	</target>
+	
+	<target name="INIT">
+		<mkdir dir="${mosaic.folder.build}"/>
+		<mkdir dir="${mosaic.folder.dist}"/>
+
+		<path id="cp">
+			<fileset dir="${mosaic.folder.lib}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${mosaic.folder.dist}">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<pathconvert property="jarcp" pathsep=" ">
+		    <path refid="cp" />
+		    <flattenmapper/>
+		</pathconvert>
+		
+		<copy verbose="false" todir="${mosaic.folder.dist}" >
+			<fileset dir="${mosaic.folder.lib}">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="COMPILE">
+		<javac verbose="false" srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.build}">
+			<classpath refid="cp"/>
+		</javac>
+
+		<jar destfile="${mosaic.folder.dist}/${ant.project.name}_${mosaic.version}.jar">
+   	        <manifest>
+   	        	<attribute name="Vendor" value="Andrew S Aguiar."/>
+   	        	<attribute name="Built-By" value="Andrew S Aguiar."/>
+   	        	<attribute name="Built-Date" value="${}"/>
+				<attribute name="Version" value="${mosaic.version}"/>
+   	        	<attribute name="Main-Class" value="${mosaic.mainclass}"/>
+				<attribute name="Class-Path" value="${jarcp}" />
+   	        </manifest>
+			<fileset dir="${mosaic.folder.build}" casesensitive="false">
+				<include name="**/*.class"/>
+				<include name="**/*.properties"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="DIST" depends="CLEAN_ALL, INIT, COMPILE, CLEAN">
+	</target>
+</project>
