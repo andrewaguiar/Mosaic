@@ -34,8 +34,6 @@ public class Input extends HTMLComponent {
 	public Input checked(final boolean checked) {
 		if (checked) {
 			this.addProperty(new Property("checked", "checked"));
-		} else {
-			this.removeProperty("checked");
 		}
 		return this;
 	}
@@ -43,8 +41,6 @@ public class Input extends HTMLComponent {
 	public Input disabled(final boolean disabled) {
 		if (disabled) {
 			this.addProperty(new Property("disabled", "disabled"));
-		} else {
-			this.removeProperty("disabled");
 		}
 		return this;
 	}
@@ -62,8 +58,6 @@ public class Input extends HTMLComponent {
 	public Input readonly(final boolean readonly) {
 		if (readonly) {
 			this.addProperty(new Property("readonly", "readonly"));
-		} else {
-			this.removeProperty("readonly");
 		}
 		return this;
 	}

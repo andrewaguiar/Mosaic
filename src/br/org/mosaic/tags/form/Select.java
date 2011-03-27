@@ -15,8 +15,6 @@ public class Select extends HTMLComponent {
 	public Select disabled(final boolean disabled) {
 		if (disabled) {
 			this.addProperty(new Property("disabled", "disabled"));
-		} else {
-			this.removeProperty("disabled");
 		}
 		return this;
 	}
@@ -24,8 +22,6 @@ public class Select extends HTMLComponent {
 	public Select multiple(final boolean multiple) {
 		if (multiple) {
 			this.addProperty(new Property("multiple", "multiple"));
-		} else {
-			this.removeProperty("multiple");
 		}
 		return this;
 	}

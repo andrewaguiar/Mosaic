@@ -105,6 +105,7 @@ public enum StyleName {
 	private String name;
 	
 	private StyleName(String name) {
+		this.name = name;
 	}
 	
 	public String getName() {

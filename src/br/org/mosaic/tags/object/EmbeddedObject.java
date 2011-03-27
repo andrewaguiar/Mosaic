@@ -45,8 +45,6 @@ public class EmbeddedObject extends HTMLComponent {
 	public EmbeddedObject declare(boolean d) {
 		if (d) {
 			addProperty(new Property("declare", "declare"));
-		} else {
-			removeProperty("declare");
 		}
 		return this;
 	}

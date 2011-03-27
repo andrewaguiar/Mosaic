@@ -1,13 +1,17 @@
 package br.org.mosaic.properties;
 
+
 /** A property of HTML tag
  * @author andrew */
 public class Property {
 	private String	name;
 	private String	value;
-	private Quotation quotation;
+	private Quotation quotation = Quotation.SINGLE;
 
 	public Property(String name, String value) {
+		if(name == null || name.trim().isEmpty()){
+			throw new IllegalArgumentException("you cannot create a unamed property");
+		}
 		this.name = name;
 		this.value = value;
 	}

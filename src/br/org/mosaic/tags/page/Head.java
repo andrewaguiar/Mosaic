@@ -18,32 +18,32 @@ public class Head extends HTMLComponent {
 		return this;
 	}
 
-	public Head title(String title) {
+	public Head addTitle(String title) {
 		add(new Title(title));
 		return this;
 	}
 
-	public Head metas(Meta... metas) {
+	public Head addMetas(Meta... metas) {
 		add(metas);
 		return this;
 	}
 
-	public Head scripts(Script... scripts) {
+	public Head addScripts(Script... scripts) {
 		add(scripts);
 		return this;
 	}
 
-	public Head styles(Style... styles) {
+	public Head addStyles(Style... styles) {
 		add(styles);
 		return this;
 	}
 
-	public Head links(Link... links) {
+	public Head addLinks(Link... links) {
 		add(links);
 		return this;
 	}
 
-	public Head base(Base... bases) {
+	public Head addBases(Base... bases) {
 		add(bases);
 		return this;
 	}

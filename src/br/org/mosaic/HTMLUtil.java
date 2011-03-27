@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class HTMLUtil {
 	public static String createLevel(int i) {
-		if (i == -1) {
+		if (i < 1 ) {
 			return "";
 		}
 		char[] c = new char[i + 1];
@@ -15,7 +15,7 @@ public class HTMLUtil {
 		c[0] = '\n';
 		return new String(c);
 	}
-
+	
 	public static String createCoords(int... coords) {
 		StringBuilder s = new StringBuilder();
 		for (int i : coords) {

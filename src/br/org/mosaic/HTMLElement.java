@@ -3,7 +3,6 @@ package br.org.mosaic;
 import java.io.IOException;
 
 import br.org.mosaic.out.Out;
-import br.org.mosaic.properties.Quotation;
 
 /**
  * @author andrew

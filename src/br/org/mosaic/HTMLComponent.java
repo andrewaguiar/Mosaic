@@ -58,12 +58,13 @@ import br.org.mosaic.tags.TextElement;
 public abstract class HTMLComponent implements HTMLElement
 {
 	public static Quotation DEFAULT_QUOTATION = Quotation.SINGLE;
-
+	public static boolean DEFAULT_INDENTED = false;
+	
 	protected Set<Property>	properties	= new LinkedHashSet< Property >();
 	protected List<HTMLElement>		elements	= new ArrayList<HTMLElement>();
 	protected Set<String>			classes		= new LinkedHashSet<String>();
-	protected Set<String>			styles		= new LinkedHashSet<String>(); 
-	private boolean					indented	= true;
+	protected Set<String>			styles		= new LinkedHashSet<String>();
+	private boolean					indented	= DEFAULT_INDENTED;
 	private Quotation quotation = DEFAULT_QUOTATION;
 
 	public HTMLComponent() {
@@ -71,10 +72,6 @@ public abstract class HTMLComponent implements HTMLElement
 
 	protected void addProperty(final Property p) {
 		this.properties.add(p);
-	}
-
-	protected void removeProperty(final String name) {
-		this.properties.remove(name);
 	}
 
 	public HTMLComponent text(final String... texts) {
@@ -147,23 +144,9 @@ public abstract class HTMLComponent implements HTMLElement
 		return this;
 	}
 
-	public HTMLComponent removeClasses(final String... classes) {
-		for (final String c : classes) {
-			this.classes.remove(c);
-		}
-		return this;
-	}
-
-	public HTMLComponent addStyles(final String... styles) {
+	public HTMLComponent styles(final String... styles) {
 		for (final String s : styles) {
 			this.styles.add(s);
-		}
-		return this;
-	}
-
-	public HTMLComponent removeStyles(final String... styles) {
-		for (final String s : styles) {
-			this.styles.remove(s);
 		}
 		return this;
 	}
@@ -178,7 +161,7 @@ public abstract class HTMLComponent implements HTMLElement
 		return this;
 	}
 
-	public HTMLComponent title(final String s) {
+	public HTMLComponent addTitle(final String s) {
 		this.addProperty(new Property("title", s));
 		return this;
 	}

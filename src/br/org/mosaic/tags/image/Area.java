@@ -35,8 +35,6 @@ public class Area extends HTMLComponent {
 	public Area nohref(boolean b) {
 		if (b) {
 			addProperty(new Property("nohref", "nohref"));
-		} else {
-			removeProperty("nohref");
 		}
 		return this;
 	}

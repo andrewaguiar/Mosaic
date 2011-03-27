@@ -20,8 +20,6 @@ public class Button extends HTMLComponent {
 	public Button disabled(boolean disabled) {
 		if (disabled) {
 			addProperty(new Property("disabled", "disabled"));
-		} else {
-			removeProperty("disabled");
 		}
 		return this;
 	}

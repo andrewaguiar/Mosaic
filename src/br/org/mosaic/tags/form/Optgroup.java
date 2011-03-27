@@ -20,8 +20,6 @@ public class Optgroup extends HTMLComponent {
 	public Optgroup disabled(boolean disabled) {
 		if (disabled) {
 			addProperty(new Property("disabled", "disabled"));
-		} else {
-			removeProperty("disabled");
 		}
 		return this;
 	}

@@ -15,8 +15,6 @@ public class Option extends HTMLComponent {
 	public Option disabled(boolean disabled) {
 		if (disabled) {
 			addProperty(new Property("disabled", "disabled"));
-		} else {
-			removeProperty("disabled");
 		}
 		return this;
 	}
@@ -34,8 +32,6 @@ public class Option extends HTMLComponent {
 	public Option selected(boolean selected) {
 		if (selected) {
 			addProperty(new Property("selected", "selected"));
-		} else {
-			removeProperty("selected");
 		}
 		return this;
 	}

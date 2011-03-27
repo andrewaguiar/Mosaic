@@ -21,8 +21,6 @@ public class Textarea extends HTMLComponent {
 	public Textarea readonly(boolean readonly) {
 		if (readonly) {
 			addProperty(new Property("readonly", "readonly"));
-		} else {
-			removeProperty("readonly");
 		}
 		return this;
 	}
@@ -40,8 +38,6 @@ public class Textarea extends HTMLComponent {
 	public Textarea disabled(boolean disabled) {
 		if (disabled) {
 			addProperty(new Property("disabled", "disabled"));
-		} else {
-			removeProperty("disabled");
 		}
 		return this;
 	}

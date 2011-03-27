@@ -35,8 +35,6 @@ public class Script extends HTMLComponent implements HTMLCompleteTag {
 	public Script defer(final boolean d) {
 		if (d) {
 			this.addProperty(new Property("defer", "defer"));
-		} else {
-			this.removeProperty("defer");
 		}
 		return this;
 	}

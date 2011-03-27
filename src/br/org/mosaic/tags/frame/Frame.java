@@ -48,8 +48,6 @@ public class Frame extends HTMLComponent {
 	public Frame noresize(boolean noresize) {
 		if (noresize) {
 			addProperty(new Property("noresize", "noresize"));
-		} else {
-			removeProperty("noresize");
 		}
 		return this;
 	}
