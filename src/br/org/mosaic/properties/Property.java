@@ -28,9 +28,11 @@ public class Property {
 		return s.contains( quotation.getQ() ) ? s.replace(quotation.getQ(), quotation.getFixedValueQ() ) : s;
 	}
 
-	public static String toString(Property... ps) {
+	public static String toString(Quotation quotation, Property... ps) {
 		StringBuilder s = new StringBuilder();
 		for (Property p : ps) {
+			p.setQuotation(quotation);
+
 			s.append(' ');
 			s.append(p);
 		}

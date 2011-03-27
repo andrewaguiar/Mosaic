@@ -12,6 +12,7 @@ import br.org.mosaic.out.Out;
 import br.org.mosaic.out.StringBuilderOut;
 import br.org.mosaic.properties.EventProperty;
 import br.org.mosaic.properties.Property;
+import br.org.mosaic.properties.Quotation;
 import br.org.mosaic.properties.StyleProperty;
 import br.org.mosaic.tags.TextElement;
 
@@ -56,11 +57,14 @@ import br.org.mosaic.tags.TextElement;
  * @author andrew */
 public abstract class HTMLComponent implements HTMLElement
 {
+	public static Quotation DEFAULT_QUOTATION = Quotation.SINGLE;
+
 	protected Set<Property>	properties	= new LinkedHashSet< Property >();
 	protected List<HTMLElement>		elements	= new ArrayList<HTMLElement>();
 	protected Set<String>			classes		= new LinkedHashSet<String>();
-	protected Set<String>			styles		= new LinkedHashSet<String>();
+	protected Set<String>			styles		= new LinkedHashSet<String>(); 
 	private boolean					indented	= true;
+	private Quotation quotation = DEFAULT_QUOTATION;
 
 	public HTMLComponent() {
 	}
@@ -100,7 +104,7 @@ public abstract class HTMLComponent implements HTMLElement
 		out.write(indented ? HTMLUtil.createLevel(level) : "");
 		out.write("<");
 		out.write(this.tagName());
-		out.write(Property.toString(this.properties.toArray(new Property[0])));
+		out.write(Property.toString(quotation, this.properties.toArray(new Property[0])));
 
 		boolean onlyInLine = true;
 		for (final HTMLElement c : this.elements) {
@@ -113,6 +117,9 @@ public abstract class HTMLComponent implements HTMLElement
 		if (!this.elements.isEmpty() || (this instanceof HTMLCompleteTag)) {
 			out.write(">");
 			for (final HTMLElement c : this.elements) {
+				if(c instanceof HTMLComponent){
+					((HTMLComponent)c).setQuotation(quotation);
+				}
 				final boolean inline = c instanceof HtmlInLineElement;
 				c.draw(out, inline ? -1 : level + 1, indented);
 			}
@@ -272,5 +279,10 @@ public abstract class HTMLComponent implements HTMLElement
 			}
 		}
 		return tags;
+	}
+	
+	public HTMLComponent setQuotation(Quotation quotation) {
+		this.quotation = quotation;
+		return this;
 	}
 }
