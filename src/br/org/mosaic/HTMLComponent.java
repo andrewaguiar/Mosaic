@@ -14,56 +14,40 @@ import br.org.mosaic.properties.Quotation;
 import br.org.mosaic.properties.StyleProperty;
 import br.org.mosaic.tags.TextElement;
 
-/** Define the base to all HTML tags. It follows a DSL programming style:
+/**
+ * Define the base to all HTML tags. It follows a DSL programming style:
+ * 
  * <pre>
-		new Table().id("table").addStyles( StyleProperty.BACKGROUND + ":#FEFEFE" ).classes("report_table").add(
-				new THead().add(
-						new TR().add(
-								new TD().text("name"),
-								new TD().text("age"),
-								new TD().text("city")
-						)
-				),
-				new TBody().add(
-						new TR().add(
-								new TD().text("Andrew"),
-								new TD().text("24"),
-								new TD().text("São Paulo")
-						),
-						new TR().add(
-								new TD().text("Test"),
-								new TD().text("2000"),
-								new TD().text("All the world")
-						)
-				)
-		);
+ * new Table().id(&quot;table&quot;).addStyles(StyleProperty.BACKGROUND + &quot;:#FEFEFE&quot;).classes(&quot;report_table&quot;).add(
+ * 		new THead().add(new TR().add(new TD().text(&quot;name&quot;), new TD().text(&quot;age&quot;), new TD().text(&quot;city&quot;))),
+ * 		new TBody().add(new TR().add(new TD().text(&quot;Andrew&quot;), new TD().text(&quot;24&quot;), new TD().text(&quot;São Paulo&quot;)), new TR().add(new TD().text(&quot;Test&quot;), new TD().text(&quot;2000&quot;), new TD()
+ * 				.text(&quot;All the world&quot;))));
  * </pre>
- * <b>Defining styles:</b>
- * Use the method addStyle(String...) each item is considered a style.
  * 
- * <b>Defining classes:</b>
- * Use the method classes(String...) same way of addStyle each item is a css class.
+ * <b>Defining styles:</b> Use the method addStyle(String...) each item is
+ * considered a style.
  * 
- * <b>Defining id:</b>
- * Use the method id(String).
+ * <b>Defining classes:</b> Use the method classes(String...) same way of
+ * addStyle each item is a css class.
  * 
- * <b>Defining another properties:</b>
- * for each element you can use it's own methods to set some specific property.
- * Example:
- * With IMG class you can user the method src(String), usemap(String) and etc.
+ * <b>Defining id:</b> Use the method id(String).
  * 
- * @author andrew */
-public abstract class HTMLComponent implements HTMLElement
-{
+ * <b>Defining another properties:</b> for each element you can use it's own
+ * methods to set some specific property. Example: With IMG class you can user
+ * the method src(String), usemap(String) and etc.
+ * 
+ * @author andrew
+ */
+public abstract class HTMLComponent implements HTMLElement {
 	public static Quotation DEFAULT_QUOTATION = Quotation.SINGLE;
 	public static boolean DEFAULT_INDENTED = false;
-	
-	protected Set<Property>	properties	= new LinkedHashSet< Property >();
-	protected List<HTMLElement>		elements	= new ArrayList<HTMLElement>();
-	protected Set<String>			classes		= new LinkedHashSet<String>();
-	protected Set<String>			styles		= new LinkedHashSet<String>();
-	private boolean					indented	= DEFAULT_INDENTED;
-	private Quotation quotation = DEFAULT_QUOTATION;
+
+	protected Set<Property> properties = new LinkedHashSet<Property>();
+	protected List<HTMLElement> elements = new ArrayList<HTMLElement>();
+	protected Set<String> classes = new LinkedHashSet<String>();
+	protected Set<String> styles = new LinkedHashSet<String>();
+	private boolean indented = HTMLComponent.DEFAULT_INDENTED;
+	private Quotation quotation = HTMLComponent.DEFAULT_QUOTATION;
 
 	public HTMLComponent() {
 	}
@@ -99,7 +83,7 @@ public abstract class HTMLComponent implements HTMLElement
 		out.write(indented ? HTMLUtil.createLevel(level) : "");
 		out.write("<");
 		out.write(this.tagName());
-		out.write(Property.toString(quotation, this.properties.toArray(new Property[0])));
+		out.write(Property.toString(this.quotation, this.properties.toArray(new Property[0])));
 
 		boolean onlyInLine = true;
 		for (final HTMLElement c : this.elements) {
@@ -112,8 +96,8 @@ public abstract class HTMLComponent implements HTMLElement
 		if (!this.elements.isEmpty() || (this instanceof HTMLCompleteTag)) {
 			out.write(">");
 			for (final HTMLElement c : this.elements) {
-				if(c instanceof HTMLComponent){
-					((HTMLComponent)c).setQuotation(quotation);
+				if (c instanceof HTMLComponent) {
+					((HTMLComponent) c).setQuotation(this.quotation);
 				}
 				final boolean inline = c instanceof HtmlInLineElement;
 				c.draw(out, inline ? -1 : level + 1, indented);
@@ -165,7 +149,7 @@ public abstract class HTMLComponent implements HTMLElement
 	}
 
 	public HTMLComponent onclick(final String func) {
-		this.addProperty(new EventProperty("onclick", func));
+		this.addProperty(EventProperty.onclick(func));
 		return this;
 	}
 
@@ -198,7 +182,6 @@ public abstract class HTMLComponent implements HTMLElement
 		this.addProperty(EventProperty.onkeyup(func));
 		return this;
 	}
-
 
 	public HTMLComponent onblur(final String func) {
 		this.addProperty(EventProperty.onblur(func));
@@ -237,7 +220,7 @@ public abstract class HTMLComponent implements HTMLElement
 		final StringBuilderOut out = new StringBuilderOut();
 		try {
 			this.draw(out, 0, this.indented);
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// Should'nt raise IOException thus StringBuilderOut does not do
 			throw new RuntimeException(e.toString(), e);
 		}
@@ -247,8 +230,8 @@ public abstract class HTMLComponent implements HTMLElement
 	public void setIndented(final boolean indented) {
 		this.indented = indented;
 	}
-	
-	public HTMLComponent setQuotation(Quotation quotation) {
+
+	public HTMLComponent setQuotation(final Quotation quotation) {
 		this.quotation = quotation;
 		return this;
 	}

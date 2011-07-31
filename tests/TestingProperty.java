@@ -1,86 +1,101 @@
+import junit.framework.Assert;
+import junit.framework.TestCase;
 import br.org.mosaic.properties.EventProperty;
 import br.org.mosaic.properties.Property;
 import br.org.mosaic.properties.Quotation;
-import junit.framework.TestCase;
 
-public class TestingProperty extends TestCase 
-{
-	public void testCreatingSimpleProperty(){
-		Property p = new Property("TESTE", "VALUE");
+public class TestingProperty extends TestCase {
+	public static void main(final String[] args) {
 
-		assertEquals("TESTE='VALUE'", p.toString());
+		final String[] ss = new String[] { "(", "(", "A", ">", "B", ")", "OU", "(", "A", ">", "X", ")", ")", "OU", "(", "A", ">", "Y", ")" };
+
+		// final int child_elements_number = 3 + 2;
+		// final int parent_parent_position = 3 + child_elements_number;
+		// final int parent_position = 3 + parent_parent_position;
+
+		final int child_elements_number = 3 + 2;
+		final int parent_parent_position = 3 + child_elements_number;
+		final int parent_position = 3 + parent_parent_position;
+
+		System.out.println(ss[(parent_position) - 1]);
 	}
 
-	public void testCreatingSimplePropertyWithEmptyValue(){
-		Property p = new Property("TESTE", "");
+	public void testCreatingSimpleProperty() {
+		final Property p = new Property("TESTE", "VALUE");
 
-		assertEquals("TESTE=''", p.toString());
+		Assert.assertEquals("TESTE='VALUE'", p.toString());
 	}
 
-	public void testShouldntAllowCreateAPropertyUnamed(){
+	public void testCreatingSimplePropertyWithEmptyValue() {
+		final Property p = new Property("TESTE", "");
+
+		Assert.assertEquals("TESTE=''", p.toString());
+	}
+
+	public void testShouldntAllowCreateAPropertyUnamed() {
 		boolean errorOccurred = false;
-		try{
+		try {
 			new Property("", "value");
-		}catch (IllegalArgumentException e) {
+		} catch (final IllegalArgumentException e) {
 			errorOccurred = true;
 		}
 
-		assertTrue(errorOccurred);
+		Assert.assertTrue(errorOccurred);
 	}
 
-	public void testShouldntAllowCreateAPropertyUnamedWithNameNull(){
+	public void testShouldntAllowCreateAPropertyUnamedWithNameNull() {
 		boolean errorOccurred = false;
-		try{
+		try {
 			new Property(null, "value");
-		}catch (IllegalArgumentException e) {
+		} catch (final IllegalArgumentException e) {
 			errorOccurred = true;
 		}
 
-		assertTrue(errorOccurred);
+		Assert.assertTrue(errorOccurred);
 	}
 
-	public void testShouldntAllowCreateAPropertyUnamedWithNameBlanked(){
+	public void testShouldntAllowCreateAPropertyUnamedWithNameBlanked() {
 		boolean errorOccurred = false;
-		try{
+		try {
 			new Property("   ", "value");
-		}catch (IllegalArgumentException e) {
+		} catch (final IllegalArgumentException e) {
 			errorOccurred = true;
 		}
 
-		assertTrue(errorOccurred);
+		Assert.assertTrue(errorOccurred);
 	}
 
-	public void testSingleQuotation(){
-		Property p = new Property("quotation", "single");
+	public void testSingleQuotation() {
+		final Property p = new Property("quotation", "single");
 		p.setQuotation(Quotation.SINGLE);
 
-		assertEquals("quotation='single'", p.toString());
+		Assert.assertEquals("quotation='single'", p.toString());
 	}
 
-	public void testDoubleQuotation(){
-		Property p = new Property("quotation", "double");
+	public void testDoubleQuotation() {
+		final Property p = new Property("quotation", "double");
 		p.setQuotation(Quotation.DOUBLE);
 
-		assertEquals("quotation=\"double\"", p.toString());
+		Assert.assertEquals("quotation=\"double\"", p.toString());
 	}
 
-	public void testSingleQuotationWithValue(){
-		Property p = new Property("quotation", "single's");
+	public void testSingleQuotationWithValue() {
+		final Property p = new Property("quotation", "single's");
 		p.setQuotation(Quotation.SINGLE);
 
-		assertEquals("quotation='single\\'s'", p.toString());
+		Assert.assertEquals("quotation='single\\'s'", p.toString());
 	}
 
-	public void testDoubleQuotationWithValue(){
-		Property p = new Property("quotation", "double\"s");
+	public void testDoubleQuotationWithValue() {
+		final Property p = new Property("quotation", "double\"s");
 		p.setQuotation(Quotation.DOUBLE);
 
-		assertEquals("quotation=\"double\\\"s\"", p.toString());
+		Assert.assertEquals("quotation=\"double\\\"s\"", p.toString());
 	}
-	
-	public void testCreatingEventProperty(){
-		EventProperty p = EventProperty.onmousedown("function(){teste();}");
-		
-		assertEquals("onmousedown='function(){teste();}'", p.toString());
+
+	public void testCreatingEventProperty() {
+		final EventProperty p = EventProperty.onmousedown("function(){teste();}");
+
+		Assert.assertEquals("onmousedown='function(){teste();}'", p.toString());
 	}
 }
