@@ -28,8 +28,7 @@
 
 		<jar destfile="${mosaic.folder.dist}/${ant.project.name}_${mosaic.version}.jar">
    	        <manifest>
-   	        	<attribute name="Vendor"     value="Andrew S Aguiar."/>
-   	        	<attribute name="Built-By"   value="Andrew S Aguiar."/>
+   	        	<attribute name="Author"     value="Andrew S Aguiar."/>
 				<attribute name="Version"    value="${mosaic.version}"/>
    	        	<attribute name="SO"         value="${os.name} - ${os.version} - ${os.arch}" />
    	        </manifest>
