@@ -71,19 +71,19 @@ public class TestingProperty extends TestCase {
 		final Property p = new Property("quotation", "single's");
 		p.setQuotation(Quotation.SINGLE);
 
-		Assert.assertEquals("quotation='single\\'s'", p.toString());
+		Assert.assertEquals(" quotation='single\\'s'", p.toString());
 	}
 
 	public void testDoubleQuotationWithValue() {
 		final Property p = new Property("quotation", "double\"s");
 		p.setQuotation(Quotation.DOUBLE);
 
-		Assert.assertEquals("quotation=\"double\\\"s\"", p.toString());
+		Assert.assertEquals(" quotation=\"double\\\"s\"", p.toString());
 	}
 
 	public void testCreatingEventProperty() {
 		final EventProperty p = EventProperty.onmousedown("function(){teste();}");
 
-		Assert.assertEquals("onmousedown='function(){teste();}'", p.toString());
+		Assert.assertEquals(" onmousedown='function(){teste();}'", p.toString());
 	}
 }
