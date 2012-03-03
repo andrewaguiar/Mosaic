@@ -11,7 +11,7 @@ public class TestingProperty extends TestCase {
 	public void testCreatingSimpleProperty() {
 		final Property p = new Property("TESTE", "VALUE");
 
-		Assert.assertEquals("TESTE='VALUE'  ", p.toString());
+		Assert.assertEquals("TESTE='VALUE'", p.toString());
 	}
 
 	public void testCreatingSimplePropertyWithEmptyValue() {
