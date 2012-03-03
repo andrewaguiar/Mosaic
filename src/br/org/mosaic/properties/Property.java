@@ -11,7 +11,7 @@ public class Property {
 		if (name == null || name.trim().isEmpty()) {
 			throw new IllegalArgumentException("you cannot create a unamed property");
 		}
-		this.name = name + "_";
+		this.name = name;
 		this.value = value;
 	}
 
