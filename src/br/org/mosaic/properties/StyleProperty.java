@@ -22,6 +22,6 @@ public class StyleProperty extends Property {
 	}
 
 	public static String style(final StyleName property, final String value) {
-		return new StringBuilder().append(property.getName()).append(":").append(value).toString() + "@";
+		return new StringBuilder().append(property.getName()).append(":").append(value).toString();
 	}
 }
