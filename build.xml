@@ -33,11 +33,6 @@
 		<junit printsummary="yes" fork="no" haltonfailure="yes" showoutput="yes" >
 			<classpath>
 				<pathelement path="${mosaic.folder.build}"/>
-				<!--
-				<fileset dir="lib">
-					<include name="**/*.jar"/>
-				</fileset>
-				-->
 			</classpath>
  		  <batchtest fork="yes" todir="${mosaic.folder.dist}">
 		  	<formatter type="xml"/>
