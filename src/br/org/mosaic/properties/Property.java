@@ -1,40 +1,39 @@
 package br.org.mosaic.properties;
 
-
 /** A property of HTML tag
  * @author andrew */
 public class Property {
-	private String	name;
-	private String	value;
+	private final String name;
+	private final String value;
 	private Quotation quotation = Quotation.SINGLE;
 
-	public Property(String name, String value) {
-		if(name == null || name.trim().isEmpty()){
+	public Property(final String name, final String value) {
+		if (name == null || name.trim().isEmpty()) {
 			throw new IllegalArgumentException("you cannot create a unamed property");
 		}
-		this.name = name;
+		this.name = name + "_";
 		this.value = value;
 	}
 
-	public void setQuotation(Quotation quotation) {
+	public void setQuotation(final Quotation quotation) {
 		this.quotation = quotation;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%s=%s%s%s", name, quotation.getQ(), t(value), quotation.getQ());
+		return String.format("%s=%s%s%s", this.name, this.quotation.getQ(), this.t(this.value), this.quotation.getQ());
 	}
 
-	private String t(String s) {
+	private String t(final String s) {
 		if (s == null) {
 			return "";
 		}
-		return s.contains( quotation.getQ() ) ? s.replace(quotation.getQ(), quotation.getFixedValueQ() ) : s;
+		return s.contains(this.quotation.getQ()) ? s.replace(this.quotation.getQ(), this.quotation.getFixedValueQ()) : s;
 	}
 
-	public static String toString(Quotation quotation, Property... ps) {
-		StringBuilder s = new StringBuilder();
-		for (Property p : ps) {
+	public static String toString(final Quotation quotation, final Property... ps) {
+		final StringBuilder s = new StringBuilder();
+		for (final Property p : ps) {
 			p.setQuotation(quotation);
 			s.append(' ');
 			s.append(p);
@@ -46,23 +45,23 @@ public class Property {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public String getValue() {
-		return value;
+		return this.value;
 	}
-	
+
 	@Override
 	public int hashCode() {
-		return name.hashCode();
+		return this.name.hashCode();
 	}
-	
+
 	@Override
-	public boolean equals(Object obj) {
-		if(obj == null || !(obj instanceof Property)){
+	public boolean equals(final Object obj) {
+		if (obj == null || !(obj instanceof Property)) {
 			return false;
 		}
-		return ((Property)obj).name.equals( this.name );
+		return ((Property) obj).name.equals(this.name);
 	}
 }
