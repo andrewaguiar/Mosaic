@@ -41,12 +41,6 @@
 		    </fileset>
 		  </batchtest>
 		</junit>
-    	
-    	<delete verbose="false">
-    		<fileset dir="${mosaic.folder.dist}">
-    			<include name="*.xml" />
-    		</fileset>
-    	</delete>
     </target>
 
 	<target name="COMPILE">
