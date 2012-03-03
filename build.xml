@@ -7,7 +7,13 @@
 	<property name="mosaic.folder.build" value="${mosaic.folder.project}build/"/>
 	<property name="mosaic.folder.dist" value="${mosaic.folder.project}dist/"/>
 	<property name="mosaic.folder.lib" value="${mosaic.folder.project}lib/"/>
-
+	<property environment="env" />
+	
+	<taskdef 
+		name="junit"
+		classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
+	</taskdef>
+	
 	<target name="CLEAN">
 		<delete verbose="false" dir="${mosaic.folder.build}"/>
 	</target>
@@ -22,6 +28,11 @@
 		<mkdir dir="${mosaic.folder.dist}"/>
 	</target>
 
+    <target name="TEST">
+    	<junit printsummary="yes" fork="yes" haltonfailure="yes">
+    	</junit>
+    </target>
+	
 	<target name="COMPILE">
 		<javac verbose="false" srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.build}">
 		</javac>
@@ -39,6 +50,6 @@
 		</jar>
 	</target>
 
-	<target name="DIST" depends="CLEAN_ALL, INIT, COMPILE, CLEAN">
+	<target name="DIST" depends="CLEAN_ALL, TEST, INIT, COMPILE, CLEAN">
 	</target>
 </project>
