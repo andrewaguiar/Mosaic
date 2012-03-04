@@ -27,6 +27,12 @@
 
 	<target name="CLEAN_ALL">
 		<delete verbose="false" dir="${mosaic.folder.build}"/>
+		<delete verbose="false">
+			<fileset dir="${mosaic.folder.dist}" >
+				<include name="*.jar" />
+				<include name="*.xml" />
+			</fileset>
+		</delete>
 		<delete verbose="false" dir="${mosaic.folder.dist}"/>
 	</target>
 	
