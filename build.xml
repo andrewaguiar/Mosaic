@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="mosaic" default="DIST" basedir=".">
 
-	<property name="mosaic.folder.project" value="../Mosaic/"/>
+	<property name="mosaic.folder.project" value="${basedir}/"/>
 	<property name="mosaic.version" value="1.0.0"/>
 	<property name="mosaic.folder.src" value="${mosaic.folder.project}src/"/>
 	<property name="mosaic.folder.tests" value="${mosaic.folder.project}tests/"/>
@@ -62,9 +62,7 @@
 		    	</fileset>
 		  	</batchtest>
 		</junit>
-
 		<cobertura-report srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.dist}" format="xml" />
-
 		<delete file="cobertura.ser"/>
 	</target>
 
