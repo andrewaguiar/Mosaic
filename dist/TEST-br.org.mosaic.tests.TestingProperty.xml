@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="osiris" name="br.org.mosaic.tests.TestingProperty" tests="10" time="0.103" timestamp="2012-03-04T21:41:12">
+<testsuite errors="0" failures="0" hostname="osiris" name="br.org.mosaic.tests.TestingProperty" tests="10" time="0.093" timestamp="2012-03-04T22:51:07">
   <properties>
     <property name="java.vendor" value="Sun Microsystems Inc." />
     <property name="env.SESSION_MANAGER" value="local/osiris:@/tmp/.ICE-unix/2060,unix/osiris:/tmp/.ICE-unix/2060" />
@@ -115,15 +115,15 @@
     <property name="java.specification.version" value="1.6" />
     <property name="ant.project.invoked-targets" value="DIST" />
   </properties>
-  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testCreatingSimpleProperty" time="0.0080" />
-  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testCreatingSimplePropertyWithEmptyValue" time="0.0010" />
+  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testCreatingSimpleProperty" time="0.0060" />
+  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testCreatingSimplePropertyWithEmptyValue" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingProperty" name="testShouldntAllowCreateAPropertyUnamed" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingProperty" name="testShouldntAllowCreateAPropertyUnamedWithNameNull" time="0.0" />
-  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testShouldntAllowCreateAPropertyUnamedWithNameBlanked" time="0.0010" />
-  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testSingleQuotation" time="0.0010" />
+  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testShouldntAllowCreateAPropertyUnamedWithNameBlanked" time="0.0" />
+  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testSingleQuotation" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingProperty" name="testDoubleQuotation" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingProperty" name="testSingleQuotationWithValue" time="0.0010" />
-  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testDoubleQuotationWithValue" time="0.0" />
+  <testcase classname="br.org.mosaic.tests.TestingProperty" name="testDoubleQuotationWithValue" time="0.0010" />
   <testcase classname="br.org.mosaic.tests.TestingProperty" name="testCreatingEventProperty" time="0.0010" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

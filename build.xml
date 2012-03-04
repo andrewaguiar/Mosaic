@@ -49,11 +49,9 @@
 		</cobertura-instrument>
 
 		<junit printsummary="yes" fork="no" haltonfailure="yes" showoutput="yes" >
-			<classpath>
-				<pathelement path="${mosaic.folder.instrumented-build}"/>
-				<pathelement path="${mosaic.folder.build}"/>
-			</classpath>
 			<classpath refid="cobertura.classpath" />
+			<classpath location="${mosaic.folder.instrumented-build}" />
+			<classpath location="${mosaic.folder.build}" />
 
  		  	<batchtest fork="yes" todir="${mosaic.folder.dist}">
 		  		<formatter type="xml"/>
