@@ -8,9 +8,9 @@ import br.org.mosaic.out.Out;
 import br.org.mosaic.out.StringBuilderOut;
 
 /** @author andrew */
-public class HTMLComponentCollection implements HTMLElement {
-	private final List<HTMLElement>	elements	= new LinkedList<HTMLElement>();
-	private boolean					indented;
+public class HTMLComponentCollection implements HTMLElement, HTMLCompleteTag {
+	private final List<HTMLElement> elements = new LinkedList<HTMLElement>();
+	private boolean indented;
 
 	public void setIndented(final boolean indented) {
 		this.indented = indented;
@@ -32,8 +32,13 @@ public class HTMLComponentCollection implements HTMLElement {
 
 	@Override
 	public void draw(final Out out, final int level, final boolean indented) throws IOException {
+		boolean first = true;
 		for (final HTMLElement element : this.elements) {
+			if (indented && !first) {
+				out.write("\n");
+			}
 			element.draw(out, level, indented);
+			first = false;
 		}
 	}
 
@@ -42,7 +47,7 @@ public class HTMLComponentCollection implements HTMLElement {
 		final StringBuilderOut out = new StringBuilderOut();
 		try {
 			this.draw(out, 0, this.indented);
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// Should'nt raise IOException thus StringBuilderOut does not do
 			throw new RuntimeException(e.toString(), e);
 		}

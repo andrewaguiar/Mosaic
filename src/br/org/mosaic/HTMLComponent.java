@@ -95,14 +95,21 @@ public abstract class HTMLComponent implements HTMLElement {
 
 		if (!this.elements.isEmpty() || (this instanceof HTMLCompleteTag)) {
 			out.write(">");
+			boolean allInLine = true;
 			for (final HTMLElement c : this.elements) {
 				if (c instanceof HTMLComponent) {
 					((HTMLComponent) c).setQuotation(this.quotation);
 				}
 				final boolean inline = c instanceof HtmlInLineElement;
 				c.draw(out, inline ? -1 : level + 1, indented);
+
+				if (!inline) {
+					allInLine = false;
+				}
 			}
-			out.write(indented ? HTMLUtil.createLevel(onlyInLine ? -1 : level) : "");
+			if (!allInLine) {
+				out.write(indented ? HTMLUtil.createLevel(onlyInLine ? -1 : level) : "");
+			}
 			out.write("</");
 			out.write(this.tagName());
 			out.write(">");
