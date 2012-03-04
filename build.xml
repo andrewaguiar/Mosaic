@@ -22,18 +22,20 @@
 	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" />
 	
 	<target name="CLEAN">
-		<delete verbose="false" dir="${mosaic.folder.build}"/>
+		<delete dir="${mosaic.folder.build}"/>
+		<delete dir="${mosaic.folder.instrumented-build}" />
 	</target>
 
 	<target name="CLEAN_ALL">
-		<delete verbose="false" dir="${mosaic.folder.build}"/>
+		<delete dir="${mosaic.folder.build}"/>
+		<delete dir="${mosaic.folder.instrumented-build}" />
 		<delete verbose="false">
 			<fileset dir="${mosaic.folder.dist}" >
 				<include name="*.jar" />
 				<include name="*.xml" />
 			</fileset>
 		</delete>
-		<delete verbose="false" dir="${mosaic.folder.dist}"/>
+		<delete dir="${mosaic.folder.dist}"/>
 	</target>
 	
 	<target name="INIT">
@@ -70,7 +72,6 @@
 		<cobertura-report srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.dist}" format="xml" />
 
 		<delete file="cobertura.ser"/>
-	    <delete dir="${mosaic.folder.instrumented-build}" />
 	</target>
 
     <target name="RUN-TESTS">
@@ -88,9 +89,9 @@
     </target>
 
 	<target name="COMPILE">
-		<javac verbose="false" srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.build}">
+		<javac srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.build}">
 		</javac>
-		<javac verbose="false" srcdir="${mosaic.folder.tests}" destdir="${mosaic.folder.build}">
+		<javac srcdir="${mosaic.folder.tests}" destdir="${mosaic.folder.build}">
 		</javac>
 	</target>
 

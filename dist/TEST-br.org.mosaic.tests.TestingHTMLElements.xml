@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="osiris" name="br.org.mosaic.tests.TestingHTMLElements" tests="17" time="0.179" timestamp="2012-03-04T19:50:06">
+<testsuite errors="0" failures="0" hostname="osiris" name="br.org.mosaic.tests.TestingHTMLElements" tests="17" time="0.107" timestamp="2012-03-04T19:53:55">
   <properties>
     <property name="java.vendor" value="Sun Microsystems Inc." />
     <property name="env.SESSION_MANAGER" value="local/osiris:@/tmp/.ICE-unix/2060,unix/osiris:/tmp/.ICE-unix/2060" />
@@ -74,7 +74,7 @@
     <property name="java.vm.vendor" value="Sun Microsystems Inc." />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.version" value="Apache Ant version 1.8.0 compiled on February 1 2010" />
-    <property name="java.class.path" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic/build:/home/andrew/bin/apache-ant-1.8.0/lib/junit.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant-launcher.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant-junit.jar" />
+    <property name="java.class.path" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic/instrumented-build:/home/andrew/desenvolvimento/workspaces/shared/Mosaic/build:/home/andrew/bin/cobertura-1.9.4.1/cobertura.jar:/home/andrew/bin/cobertura-1.9.4.1/lib/asm-3.0.jar:/home/andrew/bin/cobertura-1.9.4.1/lib/asm-tree-3.0.jar:/home/andrew/bin/cobertura-1.9.4.1/lib/jakarta-oro-2.0.8.jar:/home/andrew/bin/cobertura-1.9.4.1/lib/log4j-1.2.9.jar:/home/andrew/bin/apache-ant-1.8.0/lib/junit.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant-launcher.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant-junit.jar" />
     <property name="env.JBOSS_HOME" value="/home/andrew/bin/jboss-5.1.0.GA" />
     <property name="env.XFILESEARCHPATH" value="/usr/dt/app-defaults/%L/Dt" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
@@ -113,25 +113,25 @@
     <property name="env.GNOME_KEYRING_SOCKET" value="/tmp/keyring-9Vzpur/socket" />
     <property name="mosaic.folder.project" value="../Mosaic/" />
     <property name="java.specification.version" value="1.6" />
-    <property name="ant.project.invoked-targets" value="DIST" />
+    <property name="ant.project.invoked-targets" value="DIST-COBERTURA" />
   </properties>
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElement" time="0.012" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithId" time="0.0" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithId" time="0.0010" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithOneClasses" time="0.0010" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithTwoClasses" time="0.0010" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithThreeClasses" time="0.0010" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithThreeClasses" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithOneStyle" time="0.0020" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithTwoStyle" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithThreeStyle" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementWithEvent" time="0.0010" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNested" time="0.0020" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollection" time="0.0020" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollectionAnotherWay" time="0.0010" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollectionAnotherAnotherWay" time="0.0010" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollection" time="0.0010" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollectionAnotherWay" time="0.0" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollectionAnotherAnotherWay" time="0.0" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testElementNestedWithCollectionNestedInAnotherCollection" time="0.0010" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testCollectionShouldntPrintAnythingforItSelf" time="0.0" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testCollectionShouldntPrintAnythingforItSelf" time="0.0010" />
   <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testCollectionShouldPrintAText" time="0.0" />
-  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testCodeElement" time="0.0020" />
+  <testcase classname="br.org.mosaic.tests.TestingHTMLElements" name="testCodeElement" time="0.0010" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
