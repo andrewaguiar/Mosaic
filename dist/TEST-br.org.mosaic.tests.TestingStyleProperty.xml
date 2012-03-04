@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="osiris" name="br.org.mosaic.tests.TestingStyleProperty" tests="4" time="0.081" timestamp="2012-03-04T20:10:35">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="env.SESSION_MANAGER" value="local/osiris:@/tmp/.ICE-unix/2060,unix/osiris:/tmp/.ICE-unix/2060" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/home/andrew/bin/eclipse_galileu_web/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114/templates//" />
+    <property name="sun.management.compiler" value="HotSpot Tiered Compilers" />
+    <property name="os.name" value="Linux" />
+    <property name="sun.boot.class.path" value="/home/andrew/bin/jdk1.6.0_18/jre/lib/resources.jar:/home/andrew/bin/jdk1.6.0_18/jre/lib/rt.jar:/home/andrew/bin/jdk1.6.0_18/jre/lib/sunrsasign.jar:/home/andrew/bin/jdk1.6.0_18/jre/lib/jsse.jar:/home/andrew/bin/jdk1.6.0_18/jre/lib/jce.jar:/home/andrew/bin/jdk1.6.0_18/jre/lib/charsets.jar:/home/andrew/bin/jdk1.6.0_18/jre/classes" />
+    <property name="env.PWD" value="/home/andrew" />
+    <property name="env.XDG_SESSION_COOKIE" value="fb718ae19e81ed95a70780aa4b895c40-1330890064.278851-1510569085" />
+    <property name="sun.desktop" value="gnome" />
+    <property name="env.LANG" value="pt_BR.UTF-8" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="/home/andrew/bin/apache-ant-1.8.0" />
+    <property name="java.runtime.version" value="1.6.0_18-b07" />
+    <property name="mosaic.version" value="1.0.0" />
+    <property name="env.DISPLAY" value=":0.0" />
+    <property name="user.name" value="andrew" />
+    <property name="env.USER" value="andrew" />
+    <property name="env.SHELL" value="/bin/bash" />
+    <property name="env.MOZILLA_FIVE_HOME" value="/usr/lib/xulrunner-addons" />
+    <property name="env.DESKTOP_SESSION" value="gnome" />
+    <property name="env.XDG_DATA_DIRS" value="/usr/share/gnome:/usr/local/share/:/usr/share/" />
+    <property name="env.NLSPATH" value="/usr/dt/lib/nls/msg/%L/%N.cat" />
+    <property name="mosaic.folder.build" value="../Mosaic/build/" />
+    <property name="ant.file.type.mosaic" value="file" />
+    <property name="env.PATH" value="/home/andrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/andrew/bin/jdk1.6.0_18/bin:/home/andrew/bin/eclipse_galileu_web:/home/andrew/bin/scala-2.7.7.final/bin:/home/andrew/.gem/ruby/1.8/bin:/home/andrew/bin/scala-2.7.7.final/bin" />
+    <property name="user.language" value="pt" />
+    <property name="sun.boot.library.path" value="/home/andrew/bin/jdk1.6.0_18/jre/lib/i386" />
+    <property name="ant.project.default-target" value="DIST" />
+    <property name="ant.project.name" value="mosaic" />
+    <property name="java.version" value="1.6.0_18" />
+    <property name="user.timezone" value="" />
+    <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-hHJtWlu6uJ,guid=5b8603e4fd5b696143e7c3954f53c550" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="env.SSH_AGENT_PID" value="2101" />
+    <property name="java.endorsed.dirs" value="/home/andrew/bin/jdk1.6.0_18/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="env.GNOME_DESKTOP_SESSION_ID" value="this-is-deprecated" />
+    <property name="java.class.version" value="50.0" />
+    <property name="env.GDMSESSION" value="gnome" />
+    <property name="env.GDM_KEYBOARD_LAYOUT" value="br" />
+    <property name="user.country" value="BR" />
+    <property name="env.GNOME_KEYRING_PID" value="2045" />
+    <property name="env.OPENJMS_HOME" value="/home/andrew/bin/openjms-0.7.7-beta-1" />
+    <property name="java.home" value="/home/andrew/bin/jdk1.6.0_18/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.CATALINA_HOME" value="/home/andrew/bin/apache-tomcat-6.0.24" />
+    <property name="env.LOGNAME" value="andrew" />
+    <property name="ant.file" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic/build.xml" />
+    <property name="os.version" value="2.6.31-22-generic" />
+    <property name="mosaic.folder.lib" value="../Mosaic/lib/" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="16.0-b13" />
+    <property name="env.LANGUAGE" value="pt_BR.UTF-8" />
+    <property name="ant.library.dir" value="/home/andrew/bin/apache-ant-1.8.0/lib" />
+    <property name="env.JAVA_HOME" value="/home/andrew/bin/jdk1.6.0_18" />
+    <property name="mosaic.folder.dist" value="../Mosaic/dist/" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="eclipse.pdebuild.scripts" value="/home/andrew/bin/eclipse_galileu_web/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114/scripts//" />
+    <property name="env.GDM_LANG" value="pt_BR.UTF-8" />
+    <property name="user.home" value="/home/andrew" />
+    <property name="env.COBERTURA_HOME" value="/home/andrew/bin/cobertura-1.9.4.1" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="java.library.path" value="/home/andrew/bin/jdk1.6.0_18/jre/lib/i386/server:/home/andrew/bin/jdk1.6.0_18/jre/lib/i386:/home/andrew/bin/jdk1.6.0_18/jre/../lib/i386:/usr/lib/jvm/java-6-openjdk/jre/lib/i386/client:/usr/lib/jvm/java-6-openjdk/jre/lib/i386:/usr/lib/xulrunner-addons:/usr/lib/xulrunner-addons:/usr/java/packages/lib/i386:/lib:/usr/lib" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.version" value="Apache Ant version 1.8.0 compiled on February 1 2010" />
+    <property name="java.class.path" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic/build:/home/andrew/bin/apache-ant-1.8.0/lib/junit.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant-launcher.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant.jar:/home/andrew/bin/apache-ant-1.8.0/lib/ant-junit.jar" />
+    <property name="env.JBOSS_HOME" value="/home/andrew/bin/jboss-5.1.0.GA" />
+    <property name="env.XFILESEARCHPATH" value="/usr/dt/app-defaults/%L/Dt" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="mosaic.folder.tests" value="../Mosaic/tests/" />
+    <property name="env.GTK_RC_FILES" value="/etc/gtk/gtkrc:/home/andrew/.gtkrc-1.2-gnome2" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="env.HOME" value="/home/andrew" />
+    <property name="mosaic.folder.instrumented-build" value="../Mosaic/instrumented-build/" />
+    <property name="env.ANT_HOME" value="/home/andrew/bin/apache-ant-1.8.0" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="env.LD_LIBRARY_PATH" value="/home/andrew/bin/jdk1.6.0_18/jre/lib/i386/server:/home/andrew/bin/jdk1.6.0_18/jre/lib/i386:/home/andrew/bin/jdk1.6.0_18/jre/../lib/i386:/usr/lib/jvm/java-6-openjdk/jre/lib/i386/client:/usr/lib/jvm/java-6-openjdk/jre/lib/i386:/usr/lib/xulrunner-addons:/usr/lib/xulrunner-addons" />
+    <property name="mosaic.folder.src" value="../Mosaic/src/" />
+    <property name="eclipse.pdebuild.home" value="/home/andrew/bin/eclipse_galileu_web/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114/.//" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/keyring-9Vzpur/socket.ssh" />
+    <property name="os.arch" value="i386" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/home/andrew/bin/jdk1.6.0_18/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="user.dir" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic" />
+    <property name="env.XAUTHORITY" value="/var/run/gdm/auth-for-andrew-p00uva/database" />
+    <property name="env.SPEECHD_PORT" value="7560" />
+    <property name="env.GTK_MODULES" value="canberra-gtk-module" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Server VM" />
+    <property name="basedir" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="env.ORBIT_SOCKETDIR" value="/tmp/orbit-andrew" />
+    <property name="ant.core.lib" value="/home/andrew/bin/apache-ant-1.8.0/lib/ant.jar" />
+    <property name="env.USERNAME" value="andrew" />
+    <property name="env.SCALA_HOME" value="/home/andrew/bin/scala-2.7.7.final" />
+    <property name="ant.file.mosaic" value="/home/andrew/desenvolvimento/workspaces/shared/Mosaic/build.xml" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="env.GNOME_KEYRING_SOCKET" value="/tmp/keyring-9Vzpur/socket" />
+    <property name="mosaic.folder.project" value="../Mosaic/" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="ant.project.invoked-targets" value="DIST" />
+  </properties>
+  <testcase classname="br.org.mosaic.tests.TestingStyleProperty" name="testStringStyleUsingStyleName" time="0.0070" />
+  <testcase classname="br.org.mosaic.tests.TestingStyleProperty" name="testCreatingSimpleStyleProperty" time="0.0010" />
+  <testcase classname="br.org.mosaic.tests.TestingStyleProperty" name="testCreatingSeveralStyleProperty" time="0.0" />
+  <testcase classname="br.org.mosaic.tests.TestingStyleProperty" name="testTrimmingInStyleFormat" time="0.0010" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
