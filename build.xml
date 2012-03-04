@@ -6,14 +6,21 @@
 	<property name="mosaic.folder.src" value="${mosaic.folder.project}src/"/>
 	<property name="mosaic.folder.tests" value="${mosaic.folder.project}tests/"/>
 	<property name="mosaic.folder.build" value="${mosaic.folder.project}build/"/>
+	<property name="mosaic.folder.instrumented-build" value="${mosaic.folder.project}instrumented-build/"/>
 	<property name="mosaic.folder.dist" value="${mosaic.folder.project}dist/"/>
 	<property name="mosaic.folder.lib" value="${mosaic.folder.project}lib/"/>
 	<property environment="env" />
+	<property name="cobertura.dir" value="${basedir}/tools/cobertura" />
 	
-	<taskdef 
-		name="junit"
-		classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
-	</taskdef>
+	<path id="cobertura.classpath">
+	    <fileset dir="${env.COBERTURA_HOME}">
+	        <include name="cobertura.jar" />
+	        <include name="lib/**/*.jar" />
+	    </fileset>
+	</path>
+	
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" />
 	
 	<target name="CLEAN">
 		<delete verbose="false" dir="${mosaic.folder.build}"/>
@@ -27,6 +34,38 @@
 	<target name="INIT">
 		<mkdir dir="${mosaic.folder.build}"/>
 		<mkdir dir="${mosaic.folder.dist}"/>
+	</target>
+
+	<target name="RUN-TESTS-WITH-COBERTURA">
+		<delete file="cobertura.ser"/>
+	    <delete dir="${mosaic.folder.instrumented-build}" />
+
+		<cobertura-instrument todir="${mosaic.folder.instrumented-build}">
+			<fileset dir="${mosaic.folder.build}">
+				<include name="**/*.class" />
+				<exclude name="**/*Testing*.class" />
+			</fileset>
+		</cobertura-instrument>
+
+		<junit printsummary="yes" fork="no" haltonfailure="yes" showoutput="yes" >
+			<classpath>
+				<pathelement path="${mosaic.folder.instrumented-build}"/>
+				<pathelement path="${mosaic.folder.build}"/>
+			</classpath>
+			<classpath refid="cobertura.classpath" />
+
+ 		  	<batchtest fork="yes" todir="${mosaic.folder.dist}">
+		  		<formatter type="xml"/>
+		    	<fileset dir="${mosaic.folder.tests}">
+					<include name="**/Testing*.java"/>
+		    	</fileset>
+		  	</batchtest>
+		</junit>
+
+		<cobertura-report srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.dist}" format="xml" />
+
+		<delete file="cobertura.ser"/>
+	    <delete dir="${mosaic.folder.instrumented-build}" />
 	</target>
 
     <target name="RUN-TESTS">
@@ -64,9 +103,9 @@
 		</jar>
 	</target>
 
-	<target name="DIST" depends="COMPILE-TEST, JAR, CLEAN">
+	<target name="DIST-COBERTURA" depends="CLEAN_ALL, INIT, COMPILE, RUN-TESTS-WITH-COBERTURA, CLEAN">
 	</target>
-
-	<target name="COMPILE-TEST" depends="CLEAN_ALL, INIT, COMPILE, RUN-TESTS">
+	
+	<target name="DIST" depends="CLEAN_ALL, INIT, COMPILE, RUN-TESTS, JAR, CLEAN">
 	</target>
 </project>
