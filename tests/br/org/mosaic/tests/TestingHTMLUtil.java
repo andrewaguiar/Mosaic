@@ -7,6 +7,11 @@ import br.org.mosaic.properties.StyleName;
 import br.org.mosaic.properties.StyleProperty;
 
 public class TestingHTMLUtil extends TestCase {
+
+	public void testCanCrateHTMLUtil() {
+		Assert.assertNotNull(new HTMLUtil());
+	}
+
 	public void testCreateCoord() {
 		Assert.assertEquals("1,2,3,4,5,6,0", HTMLUtil.createCoords(1, 2, 3, 4, 5, 6, 0));
 	}
@@ -21,6 +26,10 @@ public class TestingHTMLUtil extends TestCase {
 
 	public void testCreateLevel_10() {
 		Assert.assertEquals("\n\t\t\t\t\t\t\t\t\t\t", HTMLUtil.createLevel(10));
+	}
+
+	public void test_Ltrim_empty_string() {
+		Assert.assertEquals("", HTMLUtil.ltrim(""));
 	}
 
 	public void testLTrim_0() {
