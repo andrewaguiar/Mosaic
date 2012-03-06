@@ -79,9 +79,9 @@
     </target>
 
 	<target name="COMPILE">
-		<javac srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.build}">
+		<javac srcdir="${mosaic.folder.src}" destdir="${mosaic.folder.build}" debug="true">
 		</javac>
-		<javac srcdir="${mosaic.folder.tests}" destdir="${mosaic.folder.build}">
+		<javac srcdir="${mosaic.folder.tests}" destdir="${mosaic.folder.build}" debug="true">
 		</javac>
 	</target>
 
