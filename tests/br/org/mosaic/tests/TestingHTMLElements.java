@@ -78,6 +78,15 @@ public class TestingHTMLElements extends TestCase
 		assertEquals("<div onclick='function(){alert(\\'Hello\\')}' >TESTE</div>", e.toString());
 	}
 
+	public void testElementWithAllEvents(){
+		String func = "void();";
+		Div d = new Div();
+		d.onchange(func);
+		d.text("TESTE");
+
+		assertEquals("<div onclick='function(){alert(\\'Hello\\')}' >TESTE</div>", d.toString());
+	}
+	
 	public void testElementNested(){
 		HTMLElement e = new Div().add(
 				new Br(),

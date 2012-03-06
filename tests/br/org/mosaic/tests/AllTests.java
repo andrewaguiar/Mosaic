@@ -10,6 +10,7 @@ public class AllTests {
 		suite.addTestSuite(TestingHTMLUtil.class);
 		suite.addTestSuite(TestingProperty.class);
 		suite.addTestSuite(TestingStyleProperty.class);
+		suite.addTestSuite(TestingHTMLEvents.class);
 		suite.addTestSuite(TestingHTMLElements.class);
 		//$JUnit-END$
 		return suite;
