@@ -1,7 +1,7 @@
-Mosaic provides a more DSL style to create HTML code from Java:
+## Mosaic provides a more DSL style to create HTML code from Java:
 
 Example:
-
+```java
 new Table().id("table").addStyles( StyleProperty.BACKGROUND + ":#FEFEFE" ).classes("report_table").add(
   new THead().add(
     new TR().add(
@@ -23,9 +23,9 @@ new Table().id("table").addStyles( StyleProperty.BACKGROUND + ":#FEFEFE" ).class
     )
   )
 );
-
+```
 It provides a HTML code like that:
-
+```html
 <table id='table' style='background: #FEFEFE;' class='report_table'>
  <thead>
   <tr>
@@ -47,21 +47,22 @@ It provides a HTML code like that:
   </tr>
  </tbody>
 </table>
-
+```
 ###################################################################################################
 
 Sometimes you'll wanna change the Quote of attributes, you can use the method setQuotation for that.
 new Div().setQuotation(Quotation.DOUBLE).id("test").text("Quotation Test")
 
 it'll seems like that
-
+```html
 <div id="test">Quotation Test</div>
-
+```
 Or change the DEFAULT_QUOTATION in HTMLComponent class.
-
+```java
 HTMLComponent.DEFAULT_QUOTATION = Quotation.DOUBLE;
 new Div().setQuotation(Quotation.DOUBLE).id("test").text("Quotation Test")
-
+```
 it'll seems like that
-
+```html
 <div id="test">Quotation Test</div>
+```
